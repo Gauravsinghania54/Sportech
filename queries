@@ -1,0 +1,12 @@
+Create database Sportech;
+use sportech;
+create table events(id varchar(100),status varchar(10),locale varchar(20),name varchar(500),eventDateLocal varchar(100),VenueName varchar(500),VenueCity varchar(100),VenueState varchar(100),VenuePostalCode varchar(100),VenueCountry varchar(100),CategoryName varchar(100));
+select * from events; 
+desc events;
+alter table events modify venueName  varchar(500);
+drop table events;
+ALTER TABLE events
+add categories varchar(50) Not Null;
+select count(id) from events group by id;
+create table Register(username varchar(20),password varchar(50),email varchar(25),preferences varchar(50));
+select * from register;

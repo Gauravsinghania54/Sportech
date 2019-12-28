@@ -1,0 +1,141 @@
+.faded {
+  transition: opacity 0.25s;
+  opacity: 0.25;
+}
+
+body {
+  color: #444444;
+  margin: 0;
+  height: 100vh;
+}
+
+#cards {
+  width: 100%;
+  min-height: 100vh;
+}
+#cards .card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 15px;
+  width: auto;
+  max-height: 50vh;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  border-bottom-right-radius: 0;
+  padding-bottom: 25px;
+  transition: all .25s;
+}
+#cards .card .header {
+  height: 50%;
+  margin-bottom: 15px;
+  transition: all 0.25s;
+}
+#cards .card .header .header-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 150px;
+  transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+#cards .card:first-of-type {
+  margin-top: 50px;
+}
+#cards .card.open {
+  margin: 0 0 0 0;
+  bottom: 0;
+  padding-bottom: 10px;
+  max-height: 90vh;
+  transition: all .25s;
+}
+#cards .card.open .body-content {
+  width: auto;
+}
+#cards .card.open .body-content .card-body-title {
+  width: 100%;
+}
+#cards .card .card-content {
+  margin-top: 0;
+  padding: 0 25px 0 25px;
+  height: 100%;
+  transition: margin-top 0.25s;
+  transition: all 0.25s;
+}
+#cards .card .card-content .card-body-title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: all 0.25s;
+}
+#cards .card .card-content .card-body {
+  width: 100%;
+  transition: all 0.25s;
+}
+#cards .card .card-content .card-body p {
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  #cards {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+  #cards .card {
+    height: 300px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+  }
+  #cards .card .card-content {
+    height: 250px;
+  }
+  #cards .card:hover {
+    transform: scale(1.1);
+    transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+    box-shadow: 0 0 150px rgba(0, 0, 0, 0.075);
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #cards .card:hover .header .header-image {
+    transform: scale(1.05) translateY(-3%);
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  #cards .card.open {
+    transition: all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #cards .card.open .header {
+    height: 25%;
+    transition: all 0.25s;
+  }
+  #cards .card.open .header .header-image {
+    height: 100%;
+    transition: all 0.25s;
+  }
+  #cards .card.open .card-content {
+    margin-top: 25px;
+    transition: all 0.25s;
+    margin: 50px auto;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  #cards .card.open .card-content .card-body {
+    width: 425;
+  }
+}
